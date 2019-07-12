@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.user.image_recognition.MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout_editor_absoluteY="461dp">
+
+    </FrameLayout>
+
+
+    <com.example.user.image_recognition.Views.BottomBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        tools:layout_editor_absoluteY="463dp" />
+
+
+</LinearLayout>

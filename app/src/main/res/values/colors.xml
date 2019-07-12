@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#087854</color>
+    <color name="colorPrimaryDark">#087854</color>
+    <color name="colorAccent">#087854</color>
+    <color name="MainColor">#71bf98</color>
+    <color name="Main2Color">#087854</color>
+
+    <color name="keyboard_bg">#00ba91</color>
+    <color name="iv_back_bg">#00ba91</color>
+    <color name="key_normal_bg">#00ba91</color>
+    <color name="key_pressed_bg">#00ba91</color>
+    <color name="btn_gray">#000000</color>
+    <color name="moneycolor">#71bf98</color>
+
+    <drawable name="white">#ffffff</drawable>
+    <drawable name="black">#000000</drawable>
+
+    <!--所有选项小圆按钮颜色在这了-->
+    <color name="item_icon_default">#b6b6b6</color>
+    <color name="item_icon1">#f4bc91</color>
+    <color name="item_icon2">#b3b4e7</color>
+    <color name="item_icon3">#d1b8e9</color>
+    <color name="item_icon4">#df93b7</color>
+    <color name="item_icon5">#df93b7</color>
+    <color name="item_icon6">#e68569</color>
+    <color name="item_icon7">#9fccf4</color>
+    <color name="item_icon8">#8acddb</color>
+    <color name="item_icon9">#8ecebc</color>
+    <color name="item_icon10">#83c691</color>
+
+
+    <color name="translate">#00000000</color>
+    <color name="translate_half">#50000000</color>
+
+    <color name="white">#fefefe</color>
+    <color name="black">#000000</color>
+    <color name="black_dft">#3c3c3c</color>
+    <color name="gray_dft">#888888</color>
+    <color name="red_dft">#f23030</color>
+    <color name="red_deep">#822418</color>
+
+    <color name="black_overlay">#66000000</color>
+
+
+    <!-- 其它背景色或分割线相关 -->
+    <color name="bg_content">#f3f3f3</color>
+    <color name="divider_line">#d9d9d9</color>
+
+    <!-- 字体色 -->
+    <color name="text_title">#1b1b1b</color>
+    <color name="text_content">#818181</color>
+    <color name="text_sub">#919191</color>
+    <color name="text_hint">#c7c7c7</color>
+    <color name="text_black">#404040</color>
+</resources>
