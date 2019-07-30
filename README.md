@@ -1,10 +1,8 @@
 # Multifunctional APP Based on Android and Computer Vision Model including VQA、GAN and OCR
 
 Here is listed my work during the whole development.
-[TOC]
 
 ## Implementation process and steps
-****
 1、为了快速响应用户操作，通过将后端以及预测用到的代码文件移植到稳定的实验室服务器端，可以使安装了软件的安卓用户并发且实时地发送图片和基于图片提出的问题，然后得到服务器返回的预测结果，实现问答交互效果。
 
 2、独立完成了视觉问答系统和Flask服务端的代码，编写了图像风格转换的后台`Flask`端代码供客户端交互，其安卓上的`VQA`模块能够以聊天的形式供用户使用，并将三个模块的后台部署在实验室服务器上运行。
@@ -36,7 +34,6 @@ onFailure(Call call, IOException e) {...}
 10、进一步完善`app`，增加了能够选择复制和粘贴`TextView`形式的繁体字识别转换结果，更加方便，提高了用户体验。
 
 ## Difficulties encountered and major achievements achieved
-****
 1、开始写安卓和后台`VQA`交互的时候，图片发送至服务器的函数嵌入在相机拍照和相册选取图片（`choosePhoto`和`takePhoto`）功能中，增加其它模块后进一步改善，将其移植到`MainActivity`中，使用户在使用繁体字识别模块时能够在发送图片后顺利得到结果，区别于需要提出相应问题后才得到结果的视觉问答（`VQA`）模块。
 
 2、视觉问答模块中采用了多线程，利用`request.remote_addr`得到的已连接内网的用户的IP地址作为字符串（需提前获取`wifi`服务）标记各自的图片特征（通过`np.save`保存不同图片特征的数组加载时直接`np.load`即可）和问题，从而允许多个用户同时操作，从用户发送问题到预测结果返回给APP界面过程耗时两秒左右，比较迅速，并且允许用户对同一张图片提出多个问题并得到相应回答，设置`send_cnt`和`flag`字段分别对安卓发送的和后台接收的字符串加以标记，每当发送一个新的图片则重置`send_cnt`为0。
@@ -57,7 +54,6 @@ decodedByte, null,null)); message.setImageUrl(getRealPathFromURI(uri))
 根据根据图片的`uri`获取图片的绝对路径并加载显示。
 
 ## Personal test and run record
-****
 1、手机或安卓模拟器连寝室`wifi`的`IP`地址是本地局域网，而不是服务器上识别到的学校内网的客户端地址，所以手机`app`进入视觉问答模块发给服务器的问题字符串中`IP`标记字段不一致，导致接受到的问题为`None`，需要注意。
 
 2、当点击`Fragment3`的`VQA`模块按钮进入相应的`activity`页面时，发送图片会同时相应前两个`Fragment`里`GAN`和`OCR`模块里的服务器端口，十分错乱，导致原本应该响应的`register`和`question`端口没有反应或延迟，经过调试后发现是`Eventbus`的扫尾工作问题，在前两个模块里加上以下代码后解决了问题。
@@ -77,6 +73,5 @@ if(hidden){
 
 
 ## Results analysis and personal summary
-****
 1、将最后调试生成的图像识别`apk`文件安装在手机上运行，打开运行挂在服务器的后台文件，各个模块随意点击并使用，无任何闪退现象，生成的结果较为满意，且响应及时，除界面设计外用户体验较佳。
 2、经过短短几天的软件开发实践，从调试图像视觉的模型算法，到编写`Flask`端后台，然后构建安卓客户端和后台的交互，最后调通整个客户端框架里的各个模块，同时熟悉了安卓的前端设计和用户交互，还有将各个模块进行整合，获益匪浅。在开发过程中，遇到问题就要列好各个击破，及时解决，静下心思考，缕清思路并不难，解决了就能够防止在类似的问题上绕弯路而浪费时间，按照软件开发的基本步骤进行开发调试，每个功能模块细化，用函数的形式进行封装方便调用和修改。
