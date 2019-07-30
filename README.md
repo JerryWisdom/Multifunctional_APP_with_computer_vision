@@ -1,6 +1,10 @@
 # Multifunctional APP Based on Android and Computer Vision Model including VQA、GAN and OCR
 
 Here is listed my work during the whole development.
+0. [Implementation process and steps](#Implementation process and steps)
+0. [Difficulties encountered and major achievements](#Difficulties encountered and major achievements)
+0. [Personal test and run record](#Personal test and run record)
+0. [Results analysis and personal summary](#Results analysis and personal summary)
 
 ## Implementation process and steps
 1、为了快速响应用户操作，通过将后端以及预测用到的代码文件移植到稳定的实验室服务器端，可以使安装了软件的安卓用户并发且实时地发送图片和基于图片提出的问题，然后得到服务器返回的预测结果，实现问答交互效果。
@@ -33,7 +37,7 @@ onFailure(Call call, IOException e) {...}
 
 10、进一步完善`app`，增加了能够选择复制和粘贴`TextView`形式的繁体字识别转换结果，更加方便，提高了用户体验。
 
-## Difficulties encountered and major achievements achieved
+## Difficulties encountered and major achievements
 1、开始写安卓和后台`VQA`交互的时候，图片发送至服务器的函数嵌入在相机拍照和相册选取图片（`choosePhoto`和`takePhoto`）功能中，增加其它模块后进一步改善，将其移植到`MainActivity`中，使用户在使用繁体字识别模块时能够在发送图片后顺利得到结果，区别于需要提出相应问题后才得到结果的视觉问答（`VQA`）模块。
 
 2、视觉问答模块中采用了多线程，利用`request.remote_addr`得到的已连接内网的用户的IP地址作为字符串（需提前获取`wifi`服务）标记各自的图片特征（通过`np.save`保存不同图片特征的数组加载时直接`np.load`即可）和问题，从而允许多个用户同时操作，从用户发送问题到预测结果返回给APP界面过程耗时两秒左右，比较迅速，并且允许用户对同一张图片提出多个问题并得到相应回答，设置`send_cnt`和`flag`字段分别对安卓发送的和后台接收的字符串加以标记，每当发送一个新的图片则重置`send_cnt`为0。
