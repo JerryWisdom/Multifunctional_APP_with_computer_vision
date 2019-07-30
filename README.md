@@ -1,10 +1,12 @@
 # Android APP Based on Computer Vision Model including VQA、GAN and OCR
 
+
 ### Here is listed my work during the whole development.
-1. [Implementation process and steps](#Implementation process and steps)
-2. [Difficulties encountered and major achievements](#Difficulties encountered and major achievements)
-3. [Personal test and run record](#Personal test and run record)
-4. [Results analysis and personal summary](#Results analysis and personal summary)
+0. [Implementation process and steps](#Implementation process and steps)
+0. [Difficulties encountered and major achievements](#Difficulties encountered and major achievements)
+0. [Personal test and run record](#Personal test and run record)
+0. [Results analysis and personal summary](#Results analysis and personal summary)
+
 
 ## Implementation process and steps
 1、为了快速响应用户操作，通过将后端以及预测用到的代码文件移植到稳定的实验室服务器端，可以使安装了软件的安卓用户并发且实时地发送图片和基于图片提出的问题，然后得到服务器返回的预测结果，实现问答交互效果。
