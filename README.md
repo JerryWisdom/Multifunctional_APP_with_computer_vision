@@ -1,6 +1,6 @@
-# Multifunctional APP Based on Android and Computer Vision Model including VQA、GAN and OCR
+# Android APP Based on Computer Vision Model including VQA、GAN and OCR
 
-Here is listed my work during the whole development.
+## Here is listed my work during the whole development.
 0. [Implementation process and steps](#Implementation process and steps)
 0. [Difficulties encountered and major achievements](#Difficulties encountered and major achievements)
 0. [Personal test and run record](#Personal test and run record)
