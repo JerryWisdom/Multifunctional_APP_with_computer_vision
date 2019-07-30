@@ -2,10 +2,10 @@
 
 
 ### Here is listed my work during the whole development.
-0. [Implementation process and steps](#Implementation process and steps)
-0. [Difficulties encountered and major achievements](#Difficulties encountered and major achievements)
-0. [Personal test and run record](#Personal test and run record)
-0. [Results analysis and personal summary](#Results analysis and personal summary)
+0. [Implementation process and steps](#implementation-process-and-steps)
+0. [Difficulties encountered and major achievements](#difficulties-encountered-and-major-achievements)
+0. [Personal test and run record](#personal-test-and-run-record)
+0. [Results analysis and personal summary](#results-analysis-and-personal-summary)
 
 
 ## Implementation process and steps
