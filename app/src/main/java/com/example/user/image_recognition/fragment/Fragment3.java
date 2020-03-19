@@ -39,6 +39,5 @@ public class Fragment3 extends android.support.v4.app.Fragment {
                 }
         });
 
-
     }
 }

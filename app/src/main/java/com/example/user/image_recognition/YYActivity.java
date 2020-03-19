@@ -248,7 +248,7 @@ public class YYActivity extends AppCompatActivity {  //使用兼容版的actionb
         MessageInfo messageInfo = new MessageInfo();
         messageInfo.setContent("欢迎使用视觉问答系统");
         messageInfo.setType(Constants.CHAT_ITEM_TYPE_LEFT);
-        messageInfo.setHeader("https://img5.duitang.com/uploads/item/201407/12/20140712124217_mk5d2.thumb.224_0.png");
+        messageInfo.setHeader("http://b-ssl.duitang.com/uploads/item/201707/06/20170706164810_kiCre.jpeg");
         messageInfos.add(messageInfo);
         chatAdapter.addAll(messageInfos);
     }
@@ -323,7 +323,7 @@ public class YYActivity extends AppCompatActivity {  //使用兼容版的actionb
                                             MessageInfo message = new MessageInfo();
                                             message.setContent(res);
                                             message.setType(Constants.CHAT_ITEM_TYPE_LEFT);
-                                            message.setHeader("https://img5.duitang.com/uploads/item/201407/12/20140712124217_mk5d2.thumb.224_0.png");
+                                            message.setHeader("http://b-ssl.duitang.com/uploads/item/201707/06/20170706164810_kiCre.jpeg");
                                             messageInfos.add(message);
                                             chatAdapter.add(message);
                                             chatList.scrollToPosition(chatAdapter.getCount() - 1);
