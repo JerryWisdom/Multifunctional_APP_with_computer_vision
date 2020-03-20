@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //	Log.i("TAG",name+"_"+pass);
 //
-                SQLiteDatabase db =helper.getWritableDatabase();
+                SQLiteDatabase db = helper.getWritableDatabase();
 //
                 Cursor c = db.query(
                         "admin",  //����

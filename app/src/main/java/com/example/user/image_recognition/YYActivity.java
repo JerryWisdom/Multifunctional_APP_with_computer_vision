@@ -94,6 +94,7 @@ public class YYActivity extends AppCompatActivity {  //使用兼容版的actionb
     private List<MessageInfo> messageInfos;
 
     //录音、后台通信相关
+    private Thread mThread;
     int animationRes = 0;
     int res = 0;
     int send_cnt = 0;
@@ -265,6 +266,13 @@ public class YYActivity extends AppCompatActivity {  //使用兼容版的actionb
 
     /*
        发送字符串给服务器
+       mThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+            //
+            }
+       });
+       mThread.start();
      */
     private void sendQuesToServer_5(String ques) {
         //获取wifi服务 和 连接内网的用户IP地址
@@ -277,6 +285,7 @@ public class YYActivity extends AppCompatActivity {  //使用兼容版的actionb
         int ipAddress = wifiInfo.getIpAddress();
         String ip = intToIp(ipAddress);
         //接口地址 102839
+
         String urlAddress = "http://192.168.157.159:8689/question";
         send_cnt = send_cnt + 1;
         String userip = ip.split("\\.")[0] + ip.split("\\.")[1] +ip.split("\\.")[2]+ip.split("\\.")[3];
@@ -380,10 +389,9 @@ public class YYActivity extends AppCompatActivity {  //使用兼容版的actionb
         }, 2000);
 
         // 判断发送给服务器的是否为问题字符串(仅在视觉问答中使用），否则为图片
-        if(messageInfo.getContent() instanceof String && messageInfo.getContent().length()<50){
+        if (messageInfo.getContent() instanceof String && messageInfo.getContent().length() < 50) {
             sendQuesToServer_5(messageInfo.getContent());
-        }
-        else{
+        } else {
             send_cnt = 0;   //重置一个图片的send_cnt
             sendImgToServer_2(messageInfo.getImageUrl());
         }
@@ -405,3 +413,37 @@ public class YYActivity extends AppCompatActivity {  //使用兼容版的actionb
     }
 }
 
+
+/*
+1、主线程主要来完成UI绘制和响应用户的操作，默认情况下，我们大部分的代码都是在主线程中执行的，因此我们时刻要考虑主线程的情况。我们都知道要开启一个子线程来完成一个耗时操作，
+以避免阻塞主线程影响用户体验。但是子线程执行完要更新UI的时候，我们又必须回到主线程来更新.
+2、首先在主线程里通过无参的构造方法创建一个Handler mhandler = new Handler(); 这个Handler是指向主线程的Looper,
+Handler负责将消息放到Looper的消息队列中，当到了执行的时候，它又负责在Looper所绑定的线程中执行这个消息。
+3、runOnUiThread源码: 首先判断当前的线程是否是主线程，如果是主线程就直接执行Runnable接口的run()方法；
+当执行runOnUiThread()时,当前线程不是主线程，这时调用mHandler.post(Runnable)到主线程的looper的消息队列中排队执行
+4、Runnable要实现多线程，两种方法：
+1、继承Thread类，重写run()方法.
+class MyThread extends Thread{
+    public void run(){
+        //
+    }
+}
+MyThread thread=new Mythread();
+thread.start();
+2、Runnable对象必须依赖一个Thread类才能真正意义上说是另外开辟了一个线程，不然是默认在主线程中的，在Android更新UI有这种应用，
+利用runOnUiThread(runnable)来在主线程的某一块调用Runnable的run方法，此时并没有开辟另外的线程，而是在主线程中执行的:
+    class MyThread implements Runnable{
+        public void run(){
+            //
+         }
+    }
+    class Main{
+        public static void main(String[] args){
+            MyThread thread=new MyThread();//实例化runnable对象
+            Thread thread1=new Thread(thread);//通过Thread实例化runnable对象
+            thread1.start();//利用Thread线程类启动Runnable接口的run方法
+        }
+   }
+5、在利用Runnable进行多线程时，则有时候需要资源共享,当分配一个任务给多人时，假如要实现资源共享那么就用到
+synchronized (this) { //同步代码块 }
+*/

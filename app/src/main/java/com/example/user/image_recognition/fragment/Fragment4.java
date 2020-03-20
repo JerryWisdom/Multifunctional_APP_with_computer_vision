@@ -64,7 +64,6 @@ public class Fragment4 extends Fragment {
         };
 
         mThread = new Thread(new Runnable() {
-
             @Override
             public void run() {
 
@@ -112,7 +111,6 @@ public class Fragment4 extends Fragment {
                 }
             });
         }
-
     }
 
 

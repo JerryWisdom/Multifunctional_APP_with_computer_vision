@@ -28,7 +28,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="14dp"
                 android:scaleType="fitXY"
-                android:text="取消"
+                android:text="退出"
                 android:textColor="#ffffff"
                 android:textSize="14dp" />
 
@@ -47,8 +47,8 @@
                 android:layout_height="match_parent"
                 android:background="#99404348"
                 android:gravity="center"
-                android:paddingBottom="30dp"
-                android:paddingTop="20dp">
+                android:paddingTop="20dp"
+                android:paddingBottom="30dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -64,8 +64,8 @@
                 android:layout_height="match_parent"
                 android:background="#99000000"
                 android:orientation="vertical"
-                android:paddingBottom="20dp"
-                android:paddingTop="20dp">
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
 
                 <EditText
                     android:id="@+id/userName"
@@ -82,14 +82,13 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dip"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="5dp"
                     android:background="#71bf98"></View>
 
                 <EditText
-                    android:inputType="textPassword"
                     android:id="@+id/pwd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -98,6 +97,7 @@
                     android:layout_marginRight="50dp"
                     android:background="@null"
                     android:hint="您的密码"
+                    android:inputType="textPassword"
                     android:textColor="#9F9FA0"
                     android:textColorHint="#9F9FA0" />
             </LinearLayout>
@@ -108,8 +108,8 @@
                 android:background="#99404348"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingBottom="30dp"
-                android:paddingTop="20dp">
+                android:paddingTop="20dp"
+                android:paddingBottom="30dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -126,6 +126,22 @@
                     android:text="点击这里"
                     android:textColor="#FFFFFF"
                     android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#99404348"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
